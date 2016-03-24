@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SpotProfilePage">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+
+
+    <EditText
+        android:id="@+id/spotName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spotType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp"
+        android:hint="Spot Name" />
+
+    <EditText
+        android:id="@+id/spotType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="88dp"
+        android:hint="Spot Type" />
+
+    <EditText
+        android:id="@+id/spotRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spotComments"
+        android:hint="Spot Rating" />
+
+    <EditText
+        android:id="@+id/spotTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/spotName"
+        android:hint="Spot Tag" />
+
+    <EditText
+        android:id="@+id/spotComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spotTags"
+        android:hint="Commenets" />
+
+
+    <CheckBox
+        android:id="@+id/checkBoxPublic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/checkBoxPrivate"
+        android:layout_marginLeft="57dp"
+        android:layout_marginStart="57dp"
+        android:layout_toEndOf="@+id/checkBoxPrivate"
+        android:layout_toRightOf="@+id/checkBoxPrivate"
+        android:text="Public" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPrivate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/camera1"
+        android:layout_marginLeft="75dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="57dp"
+        android:text="Private" />
+
+    <Button
+        android:id="@+id/camera1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBoxPrivate"
+        android:layout_alignStart="@+id/checkBoxPrivate"
+        android:layout_below="@+id/spotRating"
+        android:layout_marginTop="45dp"
+        android:text="Camera1" />
+
+    <Button
+        android:id="@+id/camera2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/checkBoxPublic"
+        android:layout_alignRight="@+id/checkBoxPublic"
+        android:layout_alignTop="@+id/camera1"
+        android:text="Camera2" />
+
+    <Button
+        android:id="@+id/submitSpotButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:text="Submit" />
+
+
+</RelativeLayout>

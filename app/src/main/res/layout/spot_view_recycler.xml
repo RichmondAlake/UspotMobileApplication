@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <!-- https://github.com/slidenerd/materialtest/blob/master/app/src/main/res/layout/custom_movie_box_office.xml -->
+
+
+    <ImageView
+        android:id="@+id/spotThumbnail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src = "@drawable/ic_menu_camera"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp" />
+
+    <TextView
+        android:id="@+id/spotNameRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="SpotName"
+        android:layout_alignTop="@+id/spotThumbnail"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="63dp"
+        android:layout_marginEnd="63dp" />
+
+    <TextView
+        android:id="@+id/spotCreationDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="Creation Date"
+        android:layout_alignBottom="@+id/spotThumbnail"
+        android:layout_alignLeft="@+id/spotName"
+        android:layout_alignStart="@+id/spotName" />
+
+    <RatingBar
+        android:id="@+id/spotRatingRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Holo.RatingBar.Small"
+        android:isIndicator="true"
+        android:layout_below="@+id/spotThumbnail"
+        android:layout_alignLeft="@+id/spotThumbnail"
+        android:layout_alignStart="@+id/spotThumbnail" />
+</RelativeLayout>
