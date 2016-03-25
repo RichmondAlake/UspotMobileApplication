@@ -24,12 +24,15 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.richmond.uspotmobileapplication.R;
+import com.example.richmond.uspotmobileapplication.Spot;
 import com.example.richmond.uspotmobileapplication.activities.MainPage;
+import com.example.richmond.uspotmobileapplication.adapters.AdapterSpotView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,6 +67,9 @@ public class ViewPublicSpotsFragment extends Fragment {
     private RequestQueue requestQueue; //request queue variable for the volley library
     private static final String URL = "http://10.0.3.2/uspotdatabase/getSpotInfo.php";  //192.168.56.1 (vb) (use when testing on emulator)10.0.3.2
     private JsonObjectRequest request;
+
+    private ArrayList<Spot> spotList = new ArrayList<>();
+    private AdapterSpotView adapterSpotView;
 
 
     public ViewPublicSpotsFragment() {
@@ -106,6 +112,7 @@ public class ViewPublicSpotsFragment extends Fragment {
 
                 Toast.makeText(getContext(), response.toString(), Toast.LENGTH_LONG).show();
                 parseJSONResponse(response);
+                adapterSpotView.setSpotList(spotList);
 
             }
         },new Response.ErrorListener() {
@@ -135,18 +142,28 @@ public class ViewPublicSpotsFragment extends Fragment {
         }
 
         try {
-            if (response.has("spotinfo")) {
+
+            //if (response.has("spotinfo")) {
+                StringBuilder data = new StringBuilder();
                 JSONArray spotInfoArray = response.getJSONArray("spotinfo");
                 for(int i = 0; i < spotInfoArray.length(); i++){
                     JSONObject currentSpot = spotInfoArray.getJSONObject(i);
                     String spotName = currentSpot.getString("spotname");
                     String spotType = currentSpot.getString("spot_type");
                     int spotRating = currentSpot.getInt("spotrating");
+                    data.append(spotName + spotType + spotRating + "\n");
+                //}
 
+                    Spot spot = new Spot();
+                    spot.setSpotType(spotType);
+                    spot.setSpotName(spotName);
+                    spot.setSpotRating(spotRating);
 
+                    spotList.add(spot);
+                    Toast.makeText(getContext(), "Showing Data Inside loop" + spotList.toString() , Toast.LENGTH_LONG).show();
 
-                }
             }
+            Toast.makeText(getContext(), "Showing Data" + spotList.toString() , Toast.LENGTH_LONG).show();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -174,10 +191,14 @@ public class ViewPublicSpotsFragment extends Fragment {
         /** Initialising recycler view*/
         publicRecyclerView = (RecyclerView) relativeLayout.findViewById(R.id.publicRecyclerView);
 
-        //layoutAdapter
+
 
         //layout manager
         publicRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        //layoutAdapter
+        adapterSpotView = new AdapterSpotView(getActivity());
+        publicRecyclerView.setAdapter(adapterSpotView);
+
 
 
 

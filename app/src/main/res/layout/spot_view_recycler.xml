@@ -33,9 +33,9 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:text="Creation Date"
-        android:layout_alignBottom="@+id/spotThumbnail"
-        android:layout_alignLeft="@+id/spotName"
-        android:layout_alignStart="@+id/spotName" />
+        android:layout_above="@+id/spotRatingRec"
+        android:layout_alignLeft="@+id/spotRatingRec"
+        android:layout_alignStart="@+id/spotRatingRec" />
 
     <RatingBar
         android:id="@+id/spotRatingRec"
@@ -44,6 +44,6 @@
         style="@android:style/Widget.Holo.RatingBar.Small"
         android:isIndicator="true"
         android:layout_below="@+id/spotThumbnail"
-        android:layout_alignLeft="@+id/spotThumbnail"
-        android:layout_alignStart="@+id/spotThumbnail" />
+        android:layout_alignRight="@+id/spotNameRec"
+        android:layout_alignEnd="@+id/spotNameRec" />
 </RelativeLayout>

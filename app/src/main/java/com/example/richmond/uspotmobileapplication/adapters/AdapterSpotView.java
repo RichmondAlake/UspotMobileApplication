@@ -10,31 +10,43 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.richmond.uspotmobileapplication.R;
+import com.example.richmond.uspotmobileapplication.Spot;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
 /**
  * Created by Richmond on 02/03/2016.
  */
-public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHolderSpot>{
+public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHolderSpot> {
 
+    private ArrayList<Spot> spotList = new ArrayList<>();
     private LayoutInflater layoutInflater;
-    public AdapterSpotView(Context context){
+
+    public AdapterSpotView(Context context) {
         layoutInflater = LayoutInflater.from(context);
     }
 
-
+    public void setSpotList(ArrayList<Spot> spotList) {
+        this.spotList = spotList;
+        notifyItemRangeChanged(0, spotList.size());
+    }
 
 
     @Override
     public ViewHolderSpot onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view =  layoutInflater.inflate(R.layout.spot_view_recycler,parent,false);
+        View view = layoutInflater.inflate(R.layout.spot_view_recycler, parent, false);
         ViewHolderSpot viewHolder = new ViewHolderSpot(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolderSpot holder, int position) {
+        //need access to a data structure
+        Spot currentSpot = spotList.get(position);
+        holder.spotName.setText(currentSpot.getSpotName());
+        //holder.spotRating.setText(currentSpot.getSpotRating());
+        //holder.spotThumbnail.setText(currentSpot.getSpotImage());
+        // holder.spotCreationDate.setText(currentSpot.getSpot());
 
     }
 
@@ -43,14 +55,14 @@ public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHo
         return 0;
     }
 
-    static class ViewHolderSpot extends RecyclerView.ViewHolder{
+    static class ViewHolderSpot extends RecyclerView.ViewHolder {
         private ImageView spotThumbnail;
         private TextView spotName;
         private TextView spotCreationDate;
         private RatingBar spotRating;
 
-        public ViewHolderSpot(View itemView){
-            super (itemView);
+        public ViewHolderSpot(View itemView) {
+            super(itemView);
 
             spotThumbnail = (ImageView) itemView.findViewById(R.id.spotThumbnail);
             spotName = (TextView) itemView.findViewById(R.id.spotNameRec);
