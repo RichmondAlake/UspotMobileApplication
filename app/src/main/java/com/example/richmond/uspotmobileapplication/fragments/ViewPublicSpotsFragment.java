@@ -1,7 +1,6 @@
 package com.example.richmond.uspotmobileapplication.fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,11 +20,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.richmond.uspotmobileapplication.R;
 import com.example.richmond.uspotmobileapplication.Spot;
-import com.example.richmond.uspotmobileapplication.activities.MainPage;
 import com.example.richmond.uspotmobileapplication.adapters.AdapterSpotView;
 
 import org.json.JSONArray;
@@ -33,7 +30,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -115,7 +111,7 @@ public class ViewPublicSpotsFragment extends Fragment {
                 adapterSpotView.setSpotList(spotList);
 
             }
-        },new Response.ErrorListener() {
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Can't execute Volley", Toast.LENGTH_SHORT).show();
@@ -124,7 +120,7 @@ public class ViewPublicSpotsFragment extends Fragment {
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-               // HashMap<String, String> hashMap = new HashMap<>();
+                // HashMap<String, String> hashMap = new HashMap<>();
                 //hashMap.put("email", emailOrUserNameEntry.getText().toString());
                 //hashMap.put("password", passwordEntry.getText().toString());
                 //hashMap.put("username", emailOrUserNameEntry.getText().toString());
@@ -137,33 +133,35 @@ public class ViewPublicSpotsFragment extends Fragment {
     }
 
     private void parseJSONResponse(JSONObject response) {
-        if(response == null || response.length() == 0){
+        if (response == null || response.length() == 0) {
             return;
         }
 
         try {
 
             //if (response.has("spotinfo")) {
-                StringBuilder data = new StringBuilder();
-                JSONArray spotInfoArray = response.getJSONArray("spotinfo");
-                for(int i = 0; i < spotInfoArray.length(); i++){
-                    JSONObject currentSpot = spotInfoArray.getJSONObject(i);
-                    String spotName = currentSpot.getString("spotname");
-                    String spotType = currentSpot.getString("spot_type");
-                    int spotRating = currentSpot.getInt("spotrating");
-                    data.append(spotName + spotType + spotRating + "\n");
+            StringBuilder data = new StringBuilder();
+            JSONArray spotInfoArray = response.getJSONArray("spotinfo");
+            for (int i = 0; i < spotInfoArray.length(); i++) {
+                JSONObject currentSpot = spotInfoArray.getJSONObject(i);
+                String spotName = currentSpot.getString("spotname");
+                String spotType = currentSpot.getString("spot_type");
+                int spotRating = currentSpot.getInt("spotrating");
+                data.append(spotName + spotType + spotRating + "\n");
+
+
                 //}
 
-                    Spot spot = new Spot();
-                    spot.setSpotType(spotType);
-                    spot.setSpotName(spotName);
-                    spot.setSpotRating(spotRating);
+                Spot spot = new Spot();
+                spot.setSpotType(spotType);
+                spot.setSpotName(spotName);
+                spot.setSpotRating(spotRating);
 
-                    spotList.add(spot);
-                    Toast.makeText(getContext(), "Showing Data Inside loop" + spotList.toString() , Toast.LENGTH_LONG).show();
-
+                spotList.add(spot);
+                Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
             }
-            Toast.makeText(getContext(), "Showing Data" + spotList.toString() , Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -187,10 +185,8 @@ public class ViewPublicSpotsFragment extends Fragment {
         });
 
 
-
         /** Initialising recycler view*/
         publicRecyclerView = (RecyclerView) relativeLayout.findViewById(R.id.publicRecyclerView);
-
 
 
         //layout manager
@@ -198,8 +194,6 @@ public class ViewPublicSpotsFragment extends Fragment {
         //layoutAdapter
         adapterSpotView = new AdapterSpotView(getActivity());
         publicRecyclerView.setAdapter(adapterSpotView);
-
-
 
 
         return relativeLayout;
