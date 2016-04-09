@@ -180,7 +180,7 @@ public class ViewPublicSpotsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 /** Action implemented here **/
-                //preferably call class and method to make the list
+                //preferably call class and method query the list
             }
         });
 

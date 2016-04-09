@@ -9,12 +9,9 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src = "@drawable/ic_menu_camera"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="147dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/spotNameRec"
@@ -22,11 +19,11 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:text="SpotName"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp"
         android:layout_alignTop="@+id/spotThumbnail"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="42dp"
-        android:layout_marginEnd="42dp" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/spotCreationDate"
@@ -35,8 +32,8 @@
         android:gravity="right"
         android:text="Creation Date"
         android:layout_below="@+id/spotNameRec"
-        android:layout_alignRight="@+id/spotNameRec"
-        android:layout_alignEnd="@+id/spotNameRec" />
+        android:layout_alignLeft="@+id/spotRatingRec"
+        android:layout_alignStart="@+id/spotRatingRec" />
 
     <RatingBar
         android:id="@+id/spotRatingRec"
@@ -45,6 +42,6 @@
         style="@android:style/Widget.Holo.RatingBar.Small"
         android:isIndicator="true"
         android:layout_alignBottom="@+id/spotThumbnail"
-        android:layout_alignRight="@+id/spotCreationDate"
-        android:layout_alignEnd="@+id/spotCreationDate" />
+        android:layout_alignRight="@+id/spotNameRec"
+        android:layout_alignEnd="@+id/spotNameRec" />
 </RelativeLayout>

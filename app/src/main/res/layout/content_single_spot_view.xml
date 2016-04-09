@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.richmond.uspotmobileapplication.SingleSpotView">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spot Name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="138dp"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:id = "@+id/spotNameHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SpotNameHolder"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignLeft="@+id/spotCommentHolder"
+        android:layout_alignStart="@+id/spotCommentHolder" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spot Rating"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp"
+        android:id="@+id/textView7" />
+
+    <TextView
+        android:id = "@+id/spotRatingHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SpotRatingHolder"
+        android:layout_alignTop="@+id/textView7"
+        android:layout_alignLeft="@+id/spotCommentHolder"
+        android:layout_alignStart="@+id/spotCommentHolder" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spot Comment"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:id = "@+id/spotCommentHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SpotCommentHolder"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignLeft="@+id/spotTagHolder"
+        android:layout_alignStart="@+id/spotTagHolder" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spot Tags"
+        android:layout_alignTop="@+id/spotTagHolder"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id = "@+id/spotTagHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SpotTagHolder"
+        android:layout_marginBottom="25dp"
+        android:layout_above="@+id/textView6"
+        android:layout_alignLeft="@+id/spotStatusHolder"
+        android:layout_alignStart="@+id/spotStatusHolder" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spot Status"
+        android:layout_alignTop="@+id/spotStatusHolder"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView6" />
+
+    <TextView
+        android:id = "@+id/spotStatusHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SpotStatusHolder"
+        android:layout_above="@+id/textView5"
+        android:layout_alignLeft="@+id/spotLongHolder"
+        android:layout_alignStart="@+id/spotLongHolder"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spot Longitude"
+        android:layout_alignTop="@+id/spotLongHolder"
+        android:layout_alignRight="@+id/spotLongHolder"
+        android:layout_alignEnd="@+id/spotLongHolder"
+        android:id="@+id/textView5" />
+
+    <TextView
+        android:id = "@+id/spotLongHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SpotLongHolder"
+        android:layout_above="@+id/textView4"
+        android:layout_alignLeft="@+id/spotLatHolder"
+        android:layout_alignStart="@+id/spotLatHolder"
+        android:layout_marginBottom="28dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spot Latitude"
+        android:layout_alignTop="@+id/spotLatHolder"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView4" />
+
+    <TextView
+        android:id = "@+id/spotLatHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SpotLatHolder"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="187dp"
+        android:layout_marginStart="187dp"
+        android:layout_marginBottom="102dp" />
+
+
+
+</RelativeLayout>

@@ -160,7 +160,7 @@ public class MainPage extends AppCompatActivity implements GoogleApiClient.Conne
 
         /**
          if (id == R.id.navigate) {
-         startActivity(new Intent(this, SpotProfilePage.class));
+         startActivity(new Intent(this, CreateSpotPage.class));
          }
          **/
 
@@ -224,7 +224,7 @@ public class MainPage extends AppCompatActivity implements GoogleApiClient.Conne
 
         if (selectedID == R.id.nav_camera) {
             drawerLayout.closeDrawer(GravityCompat.START);
-            intent = new Intent(this, SpotProfilePage.class);
+            intent = new Intent(this, CreateSpotPage.class);
             startActivity(intent);
 
         }

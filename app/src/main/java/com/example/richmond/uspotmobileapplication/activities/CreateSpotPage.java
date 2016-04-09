@@ -37,7 +37,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SpotProfilePage extends AppCompatActivity {
+public class CreateSpotPage extends AppCompatActivity {
 
 
     private EditText spotName;

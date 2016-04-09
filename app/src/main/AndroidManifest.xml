@@ -47,7 +47,7 @@
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name=".activities.SpotProfilePage"
+            android:name=".activities.CreateSpotPage"
             android:label="@string/title_activity_spot_profile_page"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -58,6 +58,10 @@
             android:name=".activities.ViewAllSpots"
             android:label="@string/title_activity_view_all_spots"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activities.SingleSpotView"
+            android:label="@string/title_activity_single_spot_view"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

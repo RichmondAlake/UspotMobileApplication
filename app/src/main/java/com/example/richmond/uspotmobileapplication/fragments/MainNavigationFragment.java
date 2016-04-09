@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.example.richmond.uspotmobileapplication.R;
-import com.example.richmond.uspotmobileapplication.activities.SpotProfilePage;
+import com.example.richmond.uspotmobileapplication.activities.CreateSpotPage;
 
 
 /**
@@ -84,7 +84,7 @@ public class MainNavigationFragment extends Fragment {
             /** Navigating to the Spot Profile creation activity **/
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), SpotProfilePage.class);
+                Intent i = new Intent(getActivity(), CreateSpotPage.class);
                 startActivity(i);
             }
         });
