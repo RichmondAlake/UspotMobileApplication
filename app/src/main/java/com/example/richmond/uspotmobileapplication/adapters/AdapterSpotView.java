@@ -52,7 +52,7 @@ public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return spotList.size();
     }
 
     static class ViewHolderSpot extends RecyclerView.ViewHolder {

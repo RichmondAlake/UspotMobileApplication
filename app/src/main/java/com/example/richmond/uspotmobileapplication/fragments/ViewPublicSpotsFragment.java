@@ -158,7 +158,7 @@ public class ViewPublicSpotsFragment extends Fragment {
                 spot.setSpotRating(spotRating);
 
                 spotList.add(spot);
-                Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
             }
             Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
 
