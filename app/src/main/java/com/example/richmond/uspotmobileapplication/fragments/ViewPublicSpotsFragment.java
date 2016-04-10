@@ -136,7 +136,6 @@ public class ViewPublicSpotsFragment extends Fragment {
         if (response == null || response.length() == 0) {
             return;
         }
-
         try {
 
             //if (response.has("spotinfo")) {
@@ -148,20 +147,15 @@ public class ViewPublicSpotsFragment extends Fragment {
                 String spotType = currentSpot.getString("spot_type");
                 int spotRating = currentSpot.getInt("spotrating");
                 data.append(spotName + spotType + spotRating + "\n");
-
-
                 //}
-
                 Spot spot = new Spot();
                 spot.setSpotType(spotType);
                 spot.setSpotName(spotName);
                 spot.setSpotRating(spotRating);
-
                 spotList.add(spot);
                 //Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
             }
             Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
