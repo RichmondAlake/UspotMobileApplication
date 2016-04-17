@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="?android:attr/selectableItemBackground">
     <!-- https://github.com/slidenerd/materialtest/blob/master/app/src/main/res/layout/custom_movie_box_office.xml -->
 
 
@@ -11,7 +12,8 @@
         android:src = "@drawable/ic_menu_camera"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
     <TextView
         android:id="@+id/spotNameRec"

@@ -8,7 +8,11 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.NavUtils;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
@@ -37,7 +41,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CreateSpotPage extends AppCompatActivity {
+public class CreateSpotPage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     private EditText spotName;
@@ -70,7 +74,16 @@ public class CreateSpotPage extends AppCompatActivity {
 
 
 
-    private Toolbar toolbar;
+    //private Toolbar toolbar;
+    /** Navigation Drawer variables**/
+    private android.support.v7.widget.Toolbar toolbar;
+    private NavigationView drawer;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
+    private int selectedID;
+    private static final String SELECTED_ITEM_ID = "selectedItem_ID";
+    private static final String FIRST_TIME = "first_time";
+    private boolean firstTimeSeeingTheDrawer = false;
 
 
 
@@ -79,11 +92,25 @@ public class CreateSpotPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spot_profile_page);
 
-        /** Toolbar settings**/
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        /** Toolbar initialisation **/
+        toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        /** Drawer layout fragment **/
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        drawer = (NavigationView) findViewById(R.id.navigationDrawer);
+        drawer.setNavigationItemSelectedListener(this);
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.setDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+
+
+        // selectedID = savedInstanceState == null ? R.id.nav_camera : savedInstanceState.getInt(SELECTED_ITEM_ID); //line causes the spotprofile page to start first as nav_camera is true
+        navigate(selectedID);
+
+
 
         spotName = (EditText) findViewById(R.id.spotName);
         spotType = (EditText) findViewById(R.id.spotType);
@@ -233,4 +260,49 @@ public class CreateSpotPage extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    /**
+     * Method to allow activity navigation within the drawer
+     **/
+    private void navigate(int selectedID) {
+
+        Intent intent = null;
+
+        if (selectedID == R.id.nav_camera) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+            intent = new Intent(this, CreateSpotPage.class);
+            startActivity(intent);
+
+        }
+
+        if (selectedID == R.id.nav_gallery) {
+
+        }
+
+        if (selectedID == R.id.nav_private) {
+
+        }
+        if (selectedID == R.id.nav_public) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+            intent = new Intent(this, ViewAllPublicSpot.class);
+            startActivity(intent);
+        }
+        if (selectedID == R.id.nav_send) {
+
+        }
+        if (selectedID == R.id.nav_share) {
+
+        }
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        item.setChecked(true);
+        selectedID = item.getItemId();
+
+        navigate(selectedID);
+        return true;
+    }
+
 }

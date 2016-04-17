@@ -22,7 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ViewAllSpots extends AppCompatActivity {
+public class ViewAllPublicSpot extends AppCompatActivity {
 
     private Button showAllSpotBtn;
     private TextView displayAllSpot;

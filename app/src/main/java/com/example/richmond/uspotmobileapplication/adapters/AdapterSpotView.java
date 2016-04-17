@@ -3,6 +3,7 @@ package com.example.richmond.uspotmobileapplication.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,8 @@ import static android.support.v4.app.ActivityCompat.startActivity;
  */
 public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHolderSpot> {
 
+
+    Intent intent;
     private ArrayList<Spot> spotList = new ArrayList<>();
     private LayoutInflater layoutInflater;
     private static Context context;
@@ -31,6 +34,7 @@ public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHo
     public AdapterSpotView(Context context) {
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
+        intent = new Intent(context, SingleSpotView.class);
     }
 
     public void setSpotList(ArrayList<Spot> spotList) {
@@ -55,6 +59,8 @@ public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHo
         //holder.spotThumbnail.setText(currentSpot.getSpotImage());
         // holder.spotCreationDate.setText(currentSpot.getSpot());
 
+        //intent.putExtra("spotName",currentSpot.getSpotName());
+
     }
 
     @Override
@@ -62,7 +68,7 @@ public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHo
         return spotList.size();
     }
 
-    static class ViewHolderSpot extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class ViewHolderSpot extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView spotThumbnail;
         private TextView spotName;
         private TextView spotCreationDate;
@@ -79,13 +85,18 @@ public class AdapterSpotView extends RecyclerView.Adapter<AdapterSpotView.ViewHo
             //setting the onclick listener for each item on the recycler view
             itemView.setOnClickListener(this);
 
+
         }
 
         @Override
         public void onClick(View v) {
             Toast.makeText(context, "Naviagate to single spot view", Toast.LENGTH_LONG).show();
-            context.startActivity(new Intent( context, SingleSpotView.class));
-
+            //context.startActivity(new Intent( context, SingleSpotView.class));
+           // TextView spotName = (TextView) v;
+           // intent.putExtra("spotName",spotName.getText().toString());
+            Log.d("", String.valueOf(v.getId()));
+            Toast.makeText(context, String.valueOf(v.getId()), Toast.LENGTH_LONG).show();
+            context.startActivity(intent);
 
         }
     }

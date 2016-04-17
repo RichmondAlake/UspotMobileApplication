@@ -1,148 +1,185 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.richmond.uspotmobileapplication.SingleSpotView">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spot Name"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="138dp"
-        android:id="@+id/textView2" />
+        android:layout_height="match_parent"
+        tools:context="com.example.richmond.uspotmobileapplication.SingleSpotView">
 
-    <TextView
-        android:id = "@+id/spotNameHolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SpotNameHolder"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignLeft="@+id/spotCommentHolder"
-        android:layout_alignStart="@+id/spotCommentHolder" />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spot Rating"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp"
-        android:id="@+id/textView7" />
-
-    <TextView
-        android:id = "@+id/spotRatingHolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SpotRatingHolder"
-        android:layout_alignTop="@+id/textView7"
-        android:layout_alignLeft="@+id/spotCommentHolder"
-        android:layout_alignStart="@+id/spotCommentHolder" />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spot Comment"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp" />
-
-    <TextView
-        android:id = "@+id/spotCommentHolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SpotCommentHolder"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignLeft="@+id/spotTagHolder"
-        android:layout_alignStart="@+id/spotTagHolder" />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spot Tags"
-        android:layout_alignTop="@+id/spotTagHolder"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id = "@+id/spotTagHolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SpotTagHolder"
-        android:layout_marginBottom="25dp"
-        android:layout_above="@+id/textView6"
-        android:layout_alignLeft="@+id/spotStatusHolder"
-        android:layout_alignStart="@+id/spotStatusHolder" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spot Status"
-        android:layout_alignTop="@+id/spotStatusHolder"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView6" />
-
-    <TextView
-        android:id = "@+id/spotStatusHolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SpotStatusHolder"
-        android:layout_above="@+id/textView5"
-        android:layout_alignLeft="@+id/spotLongHolder"
-        android:layout_alignStart="@+id/spotLongHolder"
-        android:layout_marginBottom="24dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spot Longitude"
-        android:layout_alignTop="@+id/spotLongHolder"
-        android:layout_alignRight="@+id/spotLongHolder"
-        android:layout_alignEnd="@+id/spotLongHolder"
-        android:id="@+id/textView5" />
-
-    <TextView
-        android:id = "@+id/spotLongHolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SpotLongHolder"
-        android:layout_above="@+id/textView4"
-        android:layout_alignLeft="@+id/spotLatHolder"
-        android:layout_alignStart="@+id/spotLatHolder"
-        android:layout_marginBottom="28dp" />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Spot Latitude"
-        android:layout_alignTop="@+id/spotLatHolder"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView4" />
-
-    <TextView
-        android:id = "@+id/spotLatHolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SpotLatHolder"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="187dp"
-        android:layout_marginStart="187dp"
-        android:layout_marginBottom="102dp" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/AppTheme.Base" />
+<!--
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+            -->
 
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spot Name"
+            android:layout_alignBaseline="@+id/textView6"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/spotNameHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/spotCommentHolder"
+            android:layout_alignStart="@+id/spotCommentHolder"
+            android:layout_alignTop="@+id/textView2"
+            android:text="SpotNameHolder" />
+
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView3"
+            android:layout_marginTop="39dp"
+            android:text="Spot Rating" />
+
+        <TextView
+            android:id="@+id/spotRatingHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/spotCommentHolder"
+            android:layout_alignStart="@+id/spotCommentHolder"
+            android:layout_alignTop="@+id/textView7"
+            android:text="SpotRatingHolder" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="25dp"
+            android:text="Spot Comment" />
+
+        <TextView
+            android:id="@+id/spotCommentHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/spotTagHolder"
+            android:layout_alignStart="@+id/spotTagHolder"
+            android:layout_alignTop="@+id/textView3"
+            android:text="SpotCommentHolder" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spot Tags"
+            android:layout_above="@+id/spotRatingHolder"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/spotTagHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SpotTagHolder"
+            android:layout_above="@+id/spotRatingHolder"
+            android:layout_alignLeft="@+id/spotStatusHolder"
+            android:layout_alignStart="@+id/spotStatusHolder" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spot Status"
+            android:layout_above="@+id/textView5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="140dp" />
+
+        <TextView
+            android:id="@+id/spotStatusHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SpotStatusHolder"
+            android:layout_above="@+id/spotCommentHolder"
+            android:layout_alignLeft="@+id/spotLongHolder"
+            android:layout_alignStart="@+id/spotLongHolder" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spot Longitude"
+            android:layout_above="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/spotLongHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SpotLongHolder"
+            android:layout_alignTop="@+id/textView5"
+            android:layout_alignLeft="@+id/spotLatHolder"
+            android:layout_alignStart="@+id/spotLatHolder" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spot Latitude"
+            android:layout_alignTop="@+id/spotLatHolder"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/spotLatHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginStart="240dp"
+            android:text="SpotLatHolder"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationDrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header"
+        app:itemIconTint="@color/colorAccent"
+        app:itemTextColor="@color/textColorSecondary"
+        app:menu="@menu/activity_navigation_drawer_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

@@ -119,10 +119,10 @@ public class LoginPage extends AppCompatActivity {
                     public void onResponse(String response) {
 
                         try {
-                            Toast.makeText(getApplicationContext(), "Button performing a function", Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(getApplicationContext(), "Button performing a function", Toast.LENGTH_SHORT).show();
                             JSONObject jsonObject = new JSONObject(response);
                             if (jsonObject.names().get(0).equals("success")) {
-                                Toast.makeText(getApplicationContext(), "SUCCESS" + jsonObject.getString("success"), Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(getApplicationContext(), "SUCCESS" + jsonObject.getString("success"), Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), MainPage.class));
                             } else{
                                 Toast.makeText(getApplicationContext(), "error" + jsonObject.getString("error"), Toast.LENGTH_SHORT).show();

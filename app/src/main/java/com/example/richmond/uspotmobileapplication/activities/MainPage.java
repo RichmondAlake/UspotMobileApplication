@@ -238,7 +238,7 @@ public class MainPage extends AppCompatActivity implements GoogleApiClient.Conne
         }
         if (selectedID == R.id.nav_public) {
             drawerLayout.closeDrawer(GravityCompat.START);
-            intent = new Intent(this, ViewAllSpots.class);
+            intent = new Intent(this, ViewAllPublicSpot.class);
             startActivity(intent);
         }
         if (selectedID == R.id.nav_send) {
@@ -278,7 +278,7 @@ public class MainPage extends AppCompatActivity implements GoogleApiClient.Conne
     }
 
     private class CustomAdapter extends FragmentPagerAdapter {
-        private String fragments[] = {"MainNavigationFragment", "ViewPublicSpotsFragment"};
+        private String fragments[] = {"Home Page", "Spots"};
         public CustomAdapter(FragmentManager supportFragmentManager, Context applicationContext) {
             super(supportFragmentManager);
         }
@@ -288,7 +288,10 @@ public class MainPage extends AppCompatActivity implements GoogleApiClient.Conne
 
             switch(position){
                 case 0 :
+
                     return new MainNavigationFragment();
+
+
                 case 1 :
                     return new ViewPublicSpotsFragment();
                 default:
@@ -307,6 +310,8 @@ public class MainPage extends AppCompatActivity implements GoogleApiClient.Conne
             return fragments[position];
         }
     }
+
+
 
     /**
      @Override public void onBackPressed() {

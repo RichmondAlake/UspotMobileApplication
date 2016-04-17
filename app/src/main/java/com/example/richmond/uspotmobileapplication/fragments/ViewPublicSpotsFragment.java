@@ -68,6 +68,8 @@ public class ViewPublicSpotsFragment extends Fragment {
     private AdapterSpotView adapterSpotView;
 
 
+
+
     public ViewPublicSpotsFragment() {
         // Required empty public constructor
     }
@@ -87,6 +89,7 @@ public class ViewPublicSpotsFragment extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -106,7 +109,7 @@ public class ViewPublicSpotsFragment extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
 
-                Toast.makeText(getContext(), response.toString(), Toast.LENGTH_LONG).show();
+               // Toast.makeText(getContext(), response.toString(), Toast.LENGTH_LONG).show();
                 parseJSONResponse(response);
                 adapterSpotView.setSpotList(spotList);
 
@@ -155,7 +158,7 @@ public class ViewPublicSpotsFragment extends Fragment {
                 spotList.add(spot);
                 //Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
             }
-            Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
+           // Toast.makeText(getContext(), "Showing Data" + spotList.toString(), Toast.LENGTH_LONG).show();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -188,6 +191,8 @@ public class ViewPublicSpotsFragment extends Fragment {
         //layoutAdapter
         adapterSpotView = new AdapterSpotView(getActivity());
         publicRecyclerView.setAdapter(adapterSpotView);
+
+
 
 
         return relativeLayout;
